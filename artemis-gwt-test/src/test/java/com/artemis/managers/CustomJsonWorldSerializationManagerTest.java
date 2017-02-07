@@ -1,6 +1,7 @@
 package com.artemis.managers;
 
 import com.artemis.*;
+import com.artemis.annotations.SkipWire;
 import com.artemis.annotations.Wire;
 import com.artemis.io.JsonArtemisSerializer;
 import com.artemis.io.SaveFileFormat;
@@ -11,8 +12,6 @@ import com.google.gwt.junit.client.GWTTestCase;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
 
 
 @Wire(injectInherited = false)
@@ -20,7 +19,7 @@ public class CustomJsonWorldSerializationManagerTest extends GWTTestCase {
 	private WorldSerializationManager manger;
 	private AspectSubscriptionManager subscriptions;
 	private SerializedSystem serializedSystem;
-	private World world;
+	@SkipWire private World world;
 	private EntitySubscription allEntities;
 
 	public CustomJsonWorldSerializationManagerTest() {

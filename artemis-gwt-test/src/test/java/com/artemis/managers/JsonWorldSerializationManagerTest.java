@@ -1,6 +1,7 @@
 package com.artemis.managers;
 
 import com.artemis.*;
+import com.artemis.annotations.SkipWire;
 import com.artemis.annotations.Wire;
 import com.artemis.component.*;
 import com.artemis.io.JsonArtemisSerializer;
@@ -23,7 +24,7 @@ public class JsonWorldSerializationManagerTest extends GWTTestCase {
 	private AspectSubscriptionManager subscriptions;
 	private TagManager tags;
 	private GroupManager groups;
-	private World world;
+	@SkipWire private World world;
 	private EntitySubscription allEntities;
 
 	@Override
